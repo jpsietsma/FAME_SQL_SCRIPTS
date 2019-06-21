@@ -53,7 +53,7 @@ VALUES
     @FilePath        -- filepath - nvarchar(255)
     )
 
---These are just debugging lines to help see the newly inserted record.
+--These are debugging lines to help see the newly inserted record.
 DECLARE @newDoc INT = SCOPE_IDENTITY()
 SELECT * FROM dbo.documentArchive WHERE pk_documentArchive = @newDoc
 
