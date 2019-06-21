@@ -5,15 +5,12 @@ DECLARE @pk2 INT
 DECLARE @FileName NVARCHAR(255)
 DECLARE @FilePath NVARCHAR(255)
 
---Change this
+--Change these three only--
 SET @FarmID = 'CHANGE_ME'
-
---And change this
 SET @FileName = 'CHANGE_ME.pdf'
-
-
-
 SET @AsrYear = 2019
+
+
 SET @FarmBusinessPK = (SELECT TOP(1)pk_farmBusiness FROM dbo.farmBusiness WHERE farmID = @FarmID ORDER BY pk_farmBusiness)
 SET @pk2 = (SELECT TOP(1) pk_asrAg FROM dbo.asrAg WHERE fk_farmBusiness = @FarmBusinessPK AND year = @AsrYear ORDER BY year)
 SET @FilePath = @FarmID + '\Final Documentation\ASRs\' + @FileName
